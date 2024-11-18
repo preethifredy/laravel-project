@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\File;
-//use Illuminate\Testing\Fluent\Concerns\Interaction;
 use Intervention\Image\Laravel\Facades\Image;
 
 
@@ -19,7 +18,7 @@ class AdminController extends Controller
     }
 
     public function brands(){
-        $brands= Brand::orderBy('id','DESC')->paginate(10);
+        $brands= Brand::orderBy('id','DESC')->paginate(5);
         return view('admin.brands',compact('brands'));
     }
 
