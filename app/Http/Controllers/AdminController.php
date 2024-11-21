@@ -95,5 +95,9 @@ class AdminController extends Controller
         return redirect()->route('admin.brands')->with('status','Record has been deleted successfully !');
     }
 
+    function add_category(){
+        return view('admin.brand-add');
+    }
+
 
 }
