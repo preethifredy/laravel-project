@@ -318,6 +318,7 @@ class AdminController extends Controller
         $product->slug = Str::slug($request->name);
         $product->short_description = $request->short_description;
         $product->description = $request->description;
+        $product->brand_id = $request->brand_id;
         $product->regular_price = $request->regular_price;
         $product->sale_price = $request->sale_price;
         $product->SKU = $request->SKU;

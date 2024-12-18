@@ -11,7 +11,6 @@ class CartController extends Controller
     public function index()
     {
         $cartItems = Cart::instance('cart')->content();
-        print_r($cartItems);
         return view('cart',compact('cartItems'));
     }
 
