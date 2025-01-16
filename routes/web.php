@@ -39,6 +39,8 @@ Route::get('/order-confirmation',[CartController::class,'confirmation'])->name('
 
 Route::middleware(['auth'])->group(function(){
     Route::get('/user', [UserController::class, 'index'])->name('user');
+    Route::get('/account-orders',[UserController::class,'account_orders'])->name('user.account.orders');
+    Route::get('/account-order-detials/{order_id}',[UserController::class,'account_order_details'])->name('user.acccount.order.details');
 });
 
 Route::middleware(['auth',AuthAdmin::class])->group(function(){
@@ -70,4 +72,7 @@ Route::middleware(['auth',AuthAdmin::class])->group(function(){
     Route::get('/admin/coupon/{id}/edit',[AdminController::class,'edit_coupon'])->name('admin.coupon.edit');
     Route::put('/admin/coupon/update',[AdminController::class,'update_coupon'])->name('admin.coupon.update');
     Route::delete('/admin/coupon/{id}/delete',[AdminController::class,'delete_coupon'])->name('admin.coupon.delete');
+
+    Route::get('/admin/orders',[AdminController::class,'orders'])->name('admin.orders');
+    Route::get('/admin/order/items/{order_id}',[AdminController::class,'order_items'])->name('admin.order.items');
 });
